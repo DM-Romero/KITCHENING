@@ -1,0 +1,40 @@
+<div class="slideshow-container col-12 col-md-6 col-lg-7">
+
+    <div class="mySlides">
+      <img src="/images/<%= image %>" alt="roto" class="img-fluid">
+    </div>
+    <div class="d-flex justify-content-start flex-wrap mt-1" style="margin-right: 5px;">
+      <% images.forEach(image => { %>
+        <img src="/images/<%= image.file || 'default.png' %>"  alt="" style="width: 30%; margin-right: 10px;">
+      <% }) %>
+    </div>
+  
+  </div>
+  
+  <script>
+    let slideIndex = 0;
+    let i;
+    let slides = document.getElementsByClassName("mySlides");
+    if (slides.length > 1) {
+      slides[0].classList.add('fade')
+      showSlides()
+      function showSlides() {
+  
+  
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) { slideIndex = 1 }
+  
+        slides[slideIndex - 1].style.display = "block";
+        setTimeout(showSlides, 3000);
+  
+      }
+    } else {
+      slides[0].style.display = "block";
+  
+    }
+  
+  
+  </script>

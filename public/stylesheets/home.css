@@ -1,0 +1,96 @@
+/* sección banner */
+.home__main__banner {
+    display: none;
+    width: 100%;
+  }
+  
+  /* sección productos */
+  
+  .home__main__products__product {
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 10px;
+    margin-bottom: 20px;
+    box-shadow: 5px 5px 15px silver;
+    transition: all 0.5s ease;
+    border-radius: 5px;
+  }
+  
+  .home__main__products__product:hover{
+    transform: scale(1.05);
+  }
+  
+  .home__main__products__product__photo-container {
+    position: relative;
+  }
+  
+  .home__main__products__product__photo-container--photo {
+    width: 100%;
+  }
+  
+  .home__main__products__product__photo-container--special {
+    position: absolute;
+    top: 0;
+    right: 10px;
+  }
+  
+  .home__main__products__product__photo-container--zoom {
+    text-transform: uppercase;
+    display: block;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 8px 0;
+    text-align: center;
+    width: 100%;
+    position: absolute;
+    margin: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .home__main__products__product h3 {
+    margin: 20px 0;
+  }
+  
+  .home__main__products__product p {
+    color: var(--colorGris);
+    text-overflow: ellipsis;
+    width: 100%;
+  
+  
+    /* BOTH of the following are required for text-overflow */
+    overflow:hidden;
+    white-space: nowrap;
+  }
+  
+  .home__main__products__product__photo-container--more {
+    background-color: var(--colorGrisOscuro);
+    padding: 8px 10px;
+    display: inline-block;
+    margin: 20px 0;
+  }
+  
+  @media (min-width: 768px) {
+    /* sección banner */
+    .home__main__banner {
+      display: block;
+    }
+  
+    /* sección productos */
+    .home__main__products {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin-top: 20px;
+    }
+  
+    .home__main__products__product {
+      width: 49%;
+    }
+  }
+  
+  @media (min-width:1024px) {
+    .home__main__products__product {
+      width: 32%;
+    }
+  }
