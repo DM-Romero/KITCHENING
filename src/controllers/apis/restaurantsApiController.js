@@ -15,7 +15,7 @@ const getAllResto = async (req,res) => {
 
                 }
             ],
-            attributes : ['id', 'name']
+            attributes : ['id', 'name', 'description']
         })
 
         const restaurants = rows.map(resto => {
@@ -66,7 +66,10 @@ const getOneResto = async (req,res) => {
             ...resto.dataValues,
             image : `${req.protocol}://${req.get('host')}/images/${resto.image}`,
             category : resto.category.name,
-            address : `${resto.address.street} ${resto.address.city}, ${resto.address.province}`
+            address : `${resto.address.street} ${resto.address.city}, ${resto.address.province}`,
+            images: resto.images.map(image => ({
+                name: `${req.protocol}://${req.get('host')}/images/${image.file}`
+            }))
         }
 
         return res.status(200).json({
